@@ -9,4 +9,5 @@ import java.util.List;
 public interface TeacherService {
     public List<Teacher> getTeachers();
     public Teacher addTeachers(TeacherDTO teacherDTO);
+    public Teacher updateTeachers(TeacherDTO teacherDTO);
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class TeacherController {
 
 
@@ -26,6 +27,12 @@ public class TeacherController {
 
     @PostMapping("/teachers")
     public ResponseEntity<Teacher> addTeacher(@RequestBody TeacherDTO teachersDTO){
+        Teacher teacher = teacherService.addTeachers(teachersDTO);
+        return new ResponseEntity<Teacher>(teacher, HttpStatus.CREATED);
+    }
+
+    @PutMapping("/teachers")
+    public ResponseEntity<Teacher> updateTeacher(@RequestBody TeacherDTO teachersDTO){
         Teacher teacher = teacherService.addTeachers(teachersDTO);
         return new ResponseEntity<Teacher>(teacher, HttpStatus.CREATED);
     }

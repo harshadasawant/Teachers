@@ -28,8 +28,28 @@ public class TeacherServiceImpl implements TeacherService {
     @Override
     public Teacher addTeachers(TeacherDTO teacherDTO) {
       Teacher teacher = new Teacher();
-      teacher.setName(teacherDTO.getName());
+      teacher.setFirstName(teacherDTO.getFirstName());
+      teacher.setLastName(teacherDTO.getLastName());
+      teacher.setEmail(teacherDTO.getEmail());
+      teacher.setPhone(teacherDTO.getPhone());
+      teacher.setPassword(teacherDTO.getPassword());
+      teacher.setConfirmedPassword(teacherDTO.getConfirmedPassword());
       Teacher teacher1 = teacherRepository.save(teacher);
         return teacher1;
+    }
+
+    @Override
+    public Teacher updateTeachers(TeacherDTO teacherDTO) {
+        Teacher teacher = new Teacher();
+
+        teacher.setFirstName(teacherDTO.getFirstName());
+        teacher.setLastName(teacherDTO.getLastName());
+        teacher.setEmail(teacherDTO.getEmail());
+        teacher.setPhone(teacherDTO.getPhone());
+        teacher.setPassword(teacherDTO.getPassword());
+        teacher.setConfirmedPassword(teacherDTO.getConfirmedPassword());
+        Teacher teacher1 = teacherRepository.save(teacher);
+
+        return null;
     }
 }
