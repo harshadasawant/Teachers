@@ -9,15 +9,13 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-public class Teacher {
+public class Enquiry {
     @Id @GeneratedValue
-    private int teacherId;
+    private int enquiryId;
     private String firstName;
     private String lastName;
     private String email;
-    private String phone;
-    private String password;
-    private String confirmedPassword;
+    private String phoneNumber;
     @ManyToMany(cascade= CascadeType.MERGE)
     @JoinTable(name="Teachers_skill",
             joinColumns=@JoinColumn(name="teacherId"),
@@ -25,5 +23,9 @@ public class Teacher {
     )
     private Set<Skill> skillSet;
     private String otherSkill;
+    private int exp;
+    private String location;
+    private boolean isOnline;
+    private boolean isOffline;
 
 }

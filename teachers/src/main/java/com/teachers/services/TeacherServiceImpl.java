@@ -34,6 +34,15 @@ public class TeacherServiceImpl implements TeacherService {
       teacher.setPhone(teacherDTO.getPhone());
       teacher.setPassword(teacherDTO.getPassword());
       teacher.setConfirmedPassword(teacherDTO.getConfirmedPassword());
+        System.out.println(teacherDTO.getSkillSet());
+        System.out.println(teacherDTO.getOtherSkill());
+      teacher.setSkillSet(teacherDTO.getSkillSet());
+      teacher.setOtherSkill(teacherDTO.getOtherSkill());
+//     if(teacherDTO.getSkillSet() != null && !teacherDTO.getSkillSet().isEmpty()){
+//         teacher.getSkillSet().forEach(skill ->{
+//
+//         });
+//     }
       Teacher teacher1 = teacherRepository.save(teacher);
         return teacher1;
     }
